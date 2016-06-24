@@ -6,9 +6,9 @@
 
 ```java
 public class Customer implements VendingMachine {
-  
+
 public int insertMoney(int money) {
-		
+
 					return money;}
 	public int returnMoney(int money,
 int price) {
@@ -22,9 +22,9 @@ int price) {
 	return name;
 	}
 						else{
-			return "You have insuffeicent funds"; 
+			return "You have insuffeicent funds";
 			}
-	}}	
+	}}
 ```
 
 What's wrong with this code?
@@ -320,7 +320,7 @@ int Foo(bool isBar) {
 # Whitesmith Style
 
 ```cpp
-int Foo(bool isBar) 
+int Foo(bool isBar)
 	{
 	if (isBar)
 		{
