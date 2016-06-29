@@ -48,7 +48,6 @@ ${DEPDIR} $@/.dirstamp: ${DEPFILE}
 	touch $@/.dirstamp
 
 else ifeq (${SLIDES},s5)
-  # DEPDIR=${OUTDIR}/${SLIDES}
   uidefault=s5-blank/ui/default
   DEPDIR=${OUTDIR}/${uidefault}
   SLIDEFLAGS=-V s5-url="../${uidefault}/${uidefault}"
@@ -63,8 +62,7 @@ ${DEPDIR}: ${DEPFILE}
 
 
 else ifeq (${SLIDES},slidy)
-  DEPDIR=
-  SLIDEFLAGS=
+  # No flags needed, here for documentation
 endif
 
 SLIDEFLAGS?=
@@ -86,10 +84,10 @@ ${OUTDIR}/%/presentation.tex: ${SOURCES}
 
 .PRECIOUS: ${OUTDIR}/%
 ${OUTDIR}/%: ${CONTENT}/%.md
-	if [[ -d '${CONTENT}/$*' ]]; then cp -r "${CONTENT}/$*" "$@"; else mkdir -p $@; fi
+	if test -d '${CONTENT}/$*'; then cp -r "${CONTENT}/$*" "$@"; else mkdir -p $@; fi
 # }}}
 
 clean:
-	rm -rf ${OUTDIR} &> /dev/null
+	rm -rf ${OUTDIR}
 
 # vim: fdm=marker
