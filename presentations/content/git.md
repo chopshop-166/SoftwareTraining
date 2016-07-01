@@ -1,7 +1,7 @@
 % Git for FIRST teams
 % Matt Soucy (<msoucy@csh.rit.edu>)
 
-# The importance of version control
+# The Importance Of Version Control
 
 - Most developers start off not using any
 - Tolerable for small projects on one's own
@@ -13,7 +13,7 @@
 
 ---
 
-# Old ways of tracking changes
+# Old Ways Of Tracking Changes
 
 - Undo/Redo
 	- This is silly, but usable, for fixing small mistakes that you make
@@ -27,7 +27,7 @@
 
 ---
 
-# Older version control systems we used
+# Older Version Control Systems We Used
 
 - Subversion
 	- Centralizes the code
@@ -53,26 +53,28 @@
 - Doesn't restrict you to using one development pattern
 	- But the mentors will
 - Branches aren't just common, but *essential*
-- We use 2015 - ???? (on [GitHub][])
+- We have used Git since 2015 (on [GitHub][])
 
 ---
 
 # Using git
 
 - Most commonly, people use the command line for this
+	- In the past, we tried using the GitHub GUI, but it seemed to get in the way
 - We don't have time to fully teach command line git properly
-- Use the Github application (Windows, OSX)
-- If you're feeling daring, ask me later
-	- According to Mark, you must call me "Oh Captain My Captain" if you exercise this option
+	- We'll briefly cover the important commands
+- If you're feeling daring, ask a mentor later
+<!--	- According to Mark, you must call me "Oh Captain My Captain" if you exercise this option-->
 
 ---
 
 # Branches
 
-- A branch is just a name for a line of changesets
+- A branch is just a name for a group of changesets
 - All repositories have a branch called `master`
 	- This branch is similar to the `default` branch from `hg`
 - Depending on your workflow, there may be more
+	- They let you jump back and forth, marking points in time
 
 ---
 
@@ -81,23 +83,25 @@
 - A copy of the repository with some changes
 - Owned by someone else
 - For the team, each person will maintain their own fork
+	- This means that you're responsible for keeping your fork up to date
 - The repository you fork from is called "`upstream`"
 	- Because changes can "flow" down
+	- By nature, this means that you're a "`downstream`"
 - When you want to add your changes to `upstream`, you do it via "pull request"
 	- Literally means "I would like you to take my changes"
 
 ---
 
-# The team's workflow
+# The Team's Workflow
 
-- Use the GitHub application
+- Use the Git Shell for most actions
+	- The GitHub GUI can be useful for viewing the change tree
 - The [ChopShop repository][] is the "canonical" repository
-	- `master` branch: WORKING code that builds
-	- `release` branch: Stable code that we trust on the robot
+	- `master` branch: *Working* code that builds
+	- `release` branch: *Stable* code that we trust on the robot
 - Your fork contains your work
 	- Develop your code in your own copy
 	- You're responsible for keeping it up to date
-		- Launch the given batch file (`Update.bat`) from the "Git Shell"
 	- You can commit and push whenever it feels appropriate
 - When your code is ready to be merged in with the team's code:
 	1. Go to your fork on GitHub
@@ -107,11 +111,52 @@
 
 ---
 
-# Pull Request Image
+# The Useful Commands
 
-![Pull Request](pull-request.png)
+`git clone https://github.com/chopshop-166/frc-2017`
+: Make a local copy of the `chopshop-166/frc-2017` repository
+
+`git add filename filename ...`
+: Mark changes as ready for commit
+
+`git commit`
+: Take all changes you've marked as ready (`staged`) and turn them into a commit
+
+`git pull upstream master`
+: Pull commits from the [ChopShop repository][], into your local repository
+
+`git push`
+: Push local commits to your fork (or another repository you have access to)
 
 ---
+
+# The Useful Commands
+
+`git checkout branchname`
+: Start looking at another branch
+
+`git branch newbranchname`
+: Create a branch named `newbranchname` at the current commit
+
+`git status`
+: Show the status of the repository (changed/staged files)
+
+`git log`
+: Show the history of the commit you're on
+
+`git reset HEAD filename`
+: Unstage changes
+
+*There are many other useful commands, if there's one you use often then ask about aliases*
+
+---
+
+# Pull Request Image
+
+![The GitHub web interface, showing the Pull Request button](pull-request.png)
+
+---
+
 
 # Conclusion
 
@@ -124,7 +169,10 @@
 
 # Further Reading
 
+Not all of these are required reading, but at least know where more information can be found
+
 - [Git Tutorial](http://git-scm.com/docs/gittutorial)
+- [Git Book](https://git-scm.com/book/en/v2)
 - [Atlassian Tutorials](https://www.atlassian.com/git/tutorials/)
 - [Ryan Brown's presentation](http://rsb.io/talks/git/)
 - [git ready](http://gitready.com)
@@ -132,6 +180,17 @@
 - [Pro Git](http://progit.org)
 - [Git Cheat Sheet](http://cheat.errtheblog.com/s/git)
 <!-- - [BitBucket tutorial](https://bitbucket.org/spooning/) -->
+
+# Practice and Training Exercises
+
+- [Try Git](http://try.github.io)
+- [Git Immersion](http://gitimmersion.com/)
+- [GitHug](https://github.com/Gazler/githug) (Requires a lot of setup)
+- [git-game](https://github.com/git-game/git-game) (More of a test of your knowledge than a tutorial)
+
+---
+
+# Questions?
 
 [GitHub]: http://github.com/
 [ChopShop repository]: http://github.com/ChopShop-166/frc-2016
