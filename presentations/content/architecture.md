@@ -1,5 +1,7 @@
-% The Architecture of FRC Robot Code
-% Matt Soucy (<msoucy@csh.rit.edu>)
+---
+title: The Architecture of FRC Robot Code
+author: Matt Soucy (<msoucy@csh.rit.edu>)
+...
 
 # Overview
 
@@ -30,7 +32,7 @@ Examples:
 
 You can write your own Components to make things work the way you want.
 For example, we have a `MultiSpeedController` that looks like a `SpeedController`, but actually controls several `SpeedController`s.
-This is handy  for locking two `SpeedController`s to the same speed.
+This is handy for locking two `SpeedController`s to the same speed.
 
 ---
 
@@ -120,8 +122,8 @@ After some deliberation, the design for the arm has been changed to use a soleno
 What needs to change?
 
 > - `RobotMap` (but this would happen no matter what)
-> - The subsystem
-> - The command
+> - `ClawArm` - the subsystem
+> - `RaiseArm` - the command
 
 # The New Subsystem
 

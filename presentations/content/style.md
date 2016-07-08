@@ -1,6 +1,8 @@
-% Style Guidelines
-% Matt Soucy (<msoucy@csh.rit.edu>)
-% February 8, 2014
+---
+title: Style Guidelines
+author: Matt Soucy (<msoucy@csh.rit.edu>)
+date: February 8, 2014
+...
 
 # Illegible code
 

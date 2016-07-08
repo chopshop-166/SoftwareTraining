@@ -1,5 +1,7 @@
-% Git for FIRST teams
-% Matt Soucy (<msoucy@csh.rit.edu>)
+---
+title: Git for FIRST teams
+author: Matt Soucy (<msoucy@csh.rit.edu>)
+...
 
 # The Importance Of Version Control
 
