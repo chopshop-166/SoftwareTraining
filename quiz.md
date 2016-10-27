@@ -12,7 +12,7 @@ This quiz is designed to figure out roughly how familiar you are with basic prog
 7.  How would you store dozens of the same type of value?
 8.  How would your program make a single `true`/`false` decision?
 9.  How do you create a new instance of the type `Victor` (ignore any arguments)?
-10. What is the different between a `while` loop and a `for` loop?
+10. What is the difference between a `while` loop and a `for` loop?
 11. How do you tell the difference between a constructor and a function/method?
 12. Describe what a `static` member is, namely how it differs from a non-`static` member.
 13. Explain the difference between an interface (such as `SpeedController`) and a class (such as `CANJaguar`). Where would you be more likely to use one vs the other?
@@ -28,4 +28,4 @@ setController(myWheel);
 myWheel.set(1.0);
 ```
 
-15. Is there anything in particular that you want to cover in more detail?
+*Extra:* Is there anything in particular that you want to cover in more detail?
