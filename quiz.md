@@ -6,7 +6,7 @@ This quiz is designed to figure out roughly how familiar you are with basic prog
 1.  What's the primary difference between an `int` and a `double`?
 2.  What is the result of `2 / 5`?
 3.  What about `2.0 / 5.0`?
-4.  Why type would you use to store a message to the user? What would the code for one look like?
+4.  What type would you use to store a message to the user? What would the code for one look like?
 5.  How do you get a value out of a function? What if there is no value?
 6.  What is special about a variable marked as `final`?
 7.  How would you store dozens of the same type of value?
@@ -28,4 +28,4 @@ setController(myWheel);
 myWheel.set(1.0);
 ```
 
-*Extra:* Is there anything in particular that you want to cover in more detail?
+*Extra:* Is there any software topic that you want to cover in more detail?
