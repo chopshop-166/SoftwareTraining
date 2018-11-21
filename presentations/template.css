@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body {
+  font-family: 'Droid Serif';
+  background-image: url(content/images/chopshop_merrimack_logo_nosponsor.jpg);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+
+.code {
+  font-family: 'Ubuntu Mono';
+}
+
+img {
+    max-width: 90%;
+}

@@ -3,6 +3,7 @@
 CONTENT:=content
 OUTDIR:=output
 FILES:=$(wildcard ${CONTENT}/*.md)
+FLAGS:=--self-contained -c template.css
 
 .PHONY: default slides pdf latex all clean
 
@@ -34,7 +35,7 @@ else ifeq (${SLIDES},dzslides)
   # No flags needed, here for documentation
 
 else ifeq (${SLIDES},revealjs)
-  REVEALVER=3.3.0
+  REVEALVER=3.7.0
   DEPFILE=revealjs-${REVEALVER}.tar.gz
   SLIDEFLAGS=-V revealjs-url="../reveal.js-${REVEALVER}"
   DEPDIR=${OUTDIR}/reveal.js-${REVEALVER}
@@ -71,7 +72,7 @@ DEPDIR?=
 
 # Generation rules {{{
 PANDOC=pandoc $< -o $@ -t ${SLIDES}
-SOURCES=${CONTENT}/%.md ${OUTDIR}/%
+SOURCES=${CONTENT}/%.md ${OUTDIR}/% template.css
 
 ${OUTDIR}/%/index.html: ${SOURCES} ${DEPDIR}
 	${PANDOC} -s ${SLIDEFLAGS} ${FLAGS}

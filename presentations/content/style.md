@@ -1,7 +1,7 @@
 ---
 title: Style Guidelines
-author: Matt Soucy (<msoucy@csh.rit.edu>)
-date: February 8, 2014
+author: Matt Soucy (<first@msoucy.me>)
+date: November 20, 2018
 ...
 
 # Illegible code
@@ -182,7 +182,7 @@ Block comments should be used in front of each method to explain the following:
 
 - High-level overview
 - Description of all arguments
-- Explaination of return value, if any
+- Explanation of return value, if any
 - Exceptions thrown (if any)
 
 Classes should also have a block comment explaining:
@@ -198,7 +198,7 @@ Classes should also have a block comment explaining:
 
 # Variables
 
-If you name a variable `kitten` then you make the compiler, and generations of programmers, cry. 
+If you name a variable `kitten` then you make the compiler, and generations of programmers, cry.
 Variables should be named descriptively:
 
 ```java
