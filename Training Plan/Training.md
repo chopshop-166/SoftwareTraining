@@ -1,0 +1,48 @@
+- Installation
+    - Installing
+    - Discussing expectations
+- Basic Java
+    - Introduction
+        - Comments
+        - Boilerplate
+        - Output
+        - Variables & Types
+        - Input
+    - Conditionals
+        - `if` statements
+        - `switch` statements
+    - Loops
+        - `for` loops
+        - `while` loops
+        - `do {} while` loops???
+        - Arrays
+        - Foreach loops
+    - Functions
+    - Classes
+    - Inheritance
+        - Probably could cover collections around this time/next time
+- Environment
+    - Editors
+        - Changing color schemes
+        - Common shortcuts
+        - Debugging/running from IDE
+    - Git
+        - GitKraken
+        - Still install vanilla git for emergencies
+- Robot Java
+    - Subsystems
+    - Commands (using the experimental library)
+        - Built in commands
+        - chopshoplib commands
+    - WPIlib classes
+    - chopshoplib wrapper classes
+    - RobotMaps
+- Advanced Robot Code
+    - See [here](https://github.com/chopshop-166/tasks/issues/1)
+    - NetworkTables
+    - Vision
+        - Python
+        - OpenCV
+    - PID tuning
+    - LED interfaces
+    - Gyro tuning
