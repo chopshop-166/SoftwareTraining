@@ -21,6 +21,8 @@
     - Classes
     - Inheritance
         - Probably could cover collections around this time/next time
+    - Enum
+      - Switch
 - Environment
     - Editors
         - Changing color schemes

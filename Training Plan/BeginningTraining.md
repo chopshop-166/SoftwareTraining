@@ -1,0 +1,133 @@
+# Basic training Schedule
+
+## First Meeting:
+ - [ ] Install software
+  - [WPI VS Code](https://github.com/wpilibsuite/allwpilib/releases)
+  - FRC Update (Driver Station)
+  - [GitKraken](https://www.gitkraken.com/)
+  - [Git](https://git-scm.com/)
+  - [Radio programming tool](https://docs.wpilib.org/en/latest/docs/software/getting-started/radio-programming.html) (Advanced Students)
+ - [ ] Demo of basic driving robot code
+  - Start with OI and subsystem created, including default command defined
+  - Talk through what is required as input to drive a robot
+  - Let students drive the robot
+
+## Second Meeting:
+ - [ ] Comments
+  - Explain comments
+  - Add single line comment inside drive command
+  - Add multi-line function comment for drive command
+ - [ ] Variables
+  - `int`
+    - Whole numbers, integars are passed to create motor controllers
+  - `float`/`double`
+    - Floating-point numbers
+    - Store joystick inputs in variables
+  - `boolean`
+    - Stores true/false, button inputs
+  - `string`
+    - Stores text, We use these to name commands
+  - Arrays
+    - Store multiple values of the same type
+    - We'll explore their usage later
+ - [ ] Conditionals
+  - `if`
+    - Implement deadband in drive command
+    - Reduce turning speed at higher forward speed
+
+## Third Meeting:
+ - [ ] Create console programs / Review
+  - Hello world!
+    - Explore printing other things
+  - Basic input
+    - Ask for users name, greet them
+    - Ask users age, print "You can drive" / "You can't drive" as appropriate
+      - Accept floating point age, print "You can drive with supervision" if they're older than 15.5
+    - Write program that prints the square of a number
+  - Write a 4 function calculator (Advanced)
+ - [ ] Arrays
+  - Review syntax
+ - [ ] Loops
+  - `for` loop syntax (comparison, iterator syntax)
+    - Fill array by asking for numbers in for loop, print numbers in a separate loop
+    - Print average of numbers gathered above
+  - `while` loop syntax
+    - Simple guessing game, ask user for number until it matches
+    - Explain infinite loop as basis of robot control,
+ - [ ] Averaging Robot exercise
+  - Add averaging to driver input
+  - This is a Low Pass Filter
+  - Explore how increasing the window size (# of samples) slows response
+
+## Fourth Meeting:
+ - [ ] Functions
+  - Way of encapsulating code that is re-used
+    - 3 Components
+      - Type
+      - Name
+      - Parameters
+  - Explore existing functions in subsystem
+    - Command function (returns a command)
+    - Ask students to identify other functions
+  - Robot Examples
+    - Move deadband code into a function
+    - Create function that finds average of an array (replace averaging code from previous session)
+  - Console Examples
+    - Square function
+    - Min function
+    - Max function
+ - [ ] Cover git if there's time remaining
+
+
+## Fifth Meeting
+ - [ ] Classes
+  - Hold information (Member variables) and functionality (methods) that are related
+  - We've already seen classes
+    - Subsystem is a class
+    - Commands are a class
+  - Cover syntax
+    - `public class Name {}`
+    - Constructor, has the same name as the class
+    - Member variables go at the top of the class
+    - Methods go at the end, after member variables
+  - Example 'Pet'
+    - Has a:
+      - Name
+      - Age
+      - Color
+      - Hunger
+    - Can:
+      - Talk
+      - Feed
+      - Get Description
+ - [ ] Inheritance
+  - Classes `extend` other classes
+  - Used to consolidate shared information/functionality
+  - Extensions can add new functionality
+  - Replace existing functionality
+  - Example 'Dog' extends 'Pet'
+    - `talk` overloaded to "bark"
+  - Example 'Cat' extends 'Pet'
+    - `talk` overloaded to "meow"
+
+
+## Filler Material
+For when the going gets tough and there isn't enough material to fill the time
+ - [ ] Cover GIT
+  - If there's extra time, now is a good opportunity to cover GIT
+  - [Software Roll Call](https://github.com/chopshop-166/SoftwareRollCall)
+    1. Clone repository
+    1. Create branch off of master
+    1. Add name to YEAR.txt
+    1. Commit change
+    1. Push change
+    1. Open PR
+    1. Ask fellow student to review PR
+    1. Ask mentor to merge PR
+
+ - [ ] Enums
+  - Creates a new variable type that has limited named values
+  - Example Lift heights for elevator
+  - Example State of arm (stowed, pickup, scoring)
+ - [ ] Switch
+  - Use instead of series of `if` when looking at single variable
