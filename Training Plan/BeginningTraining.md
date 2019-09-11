@@ -110,6 +110,18 @@
   - Example 'Cat' extends 'Pet'
     - `talk` overloaded to "meow"
 
+## Sixth Meeting
+ - Explore classes used so far
+  - Subsystem
+  - Drive
+  - SpeedController
+ - [ ] Interfaces
+  - Defines what methods a class has
+  - A class `implements` an interface or interfaces
+  - Drive Subsystem interface in robot map
+    - Add interface definition
+    - Fill in behavior in custom robot map
+    - Get value from robot map in Drive Subsystem
 
 ## Filler Material
 For when the going gets tough and there isn't enough material to fill the time
@@ -131,3 +143,10 @@ For when the going gets tough and there isn't enough material to fill the time
   - Example State of arm (stowed, pickup, scoring)
  - [ ] Switch
   - Use instead of series of `if` when looking at single variable
+ - [ ] Annotations
+  - Used to add information about code inside the code
+  - They can be extended with custom behavior
+  - Explore the usage of the `RobotMapFor("MAC ADDRESS")` annotation in the robot map
+ - [ ] [Collections](https://docs.oracle.com/javase/8/docs/api/?java/util/Collections.html)
+  - Provide a way of holding multiple objects with a standard API
+  - Tie into for loop discussion (`Iterable`)
