@@ -53,7 +53,7 @@
     - Print average of numbers gathered above
   - `while` loop syntax
     - Simple guessing game, ask user for number until it matches
-    - Explain infinite loop as basis of robot control,
+    - Explain infinite loop as basis of robot control
  - [ ] Averaging Robot exercise
   - Add averaging to driver input
   - This is a Low Pass Filter
@@ -147,6 +147,6 @@ For when the going gets tough and there isn't enough material to fill the time
   - Used to add information about code inside the code
   - They can be extended with custom behavior
   - Explore the usage of the `RobotMapFor("MAC ADDRESS")` annotation in the robot map
- - [ ] [Collections](https://docs.oracle.com/javase/8/docs/api/?java/util/Collections.html)
+ - [ ] [Collections](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html)
   - Provide a way of holding multiple objects with a standard API
   - Tie into for loop discussion (`Iterable`)
