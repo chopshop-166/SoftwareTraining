@@ -37,6 +37,21 @@ public class Drive extends SubsystemBase {
 
     public CommandBase drive() {
         return new RunCommand(() -> {
+            int thisIsAnInt;
+            double thisIsADouble = 0.4123;
+            boolean thisIsABool = true;
+            String thisIsAString = "HELLO WORLD";
+
+            // This code gets the value from the two triggers and a joystick
+            // The right trigger controls forward speed, the left trigger controls backward
+            // speed
+            // The left trigger is subtracted from the right to allow us to move backwards
+            double yAxis = Robot.driveController.getTriggerAxis(Hand.kRight)
+                    - Robot.driveController.getTriggerAxis(Hand.kLeft);
+            if (0.2 > yAxis && yAxis > -0.2) {
+                yAxis = 0;
+            }
+            driveTrain.arcadeDrive(yAxis, Robot.driveController.getX(Hand.kLeft));
         }, this);
     }
 }
