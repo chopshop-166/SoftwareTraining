@@ -25,6 +25,13 @@ public class Drive extends SubsystemBase {
     private final SpeedControllerGroup rightMotorGroup;
     private final SpeedControllerGroup leftMotorGroup;
     private final DifferentialDrive driveTrain;
+    final static int NUM_SAMPLES = 10;
+    double speedInput[] = new double[NUM_SAMPLES];
+    int i = 0;
+
+    final int NUM_SAMPLES = 5;
+    double yAxisSamples[];
+    int sampleIndex;
 
     public Drive() {
         super();
@@ -32,10 +39,13 @@ public class Drive extends SubsystemBase {
         leftMotorGroup = new SpeedControllerGroup(new WPI_TalonSRX(2), new WPI_TalonSRX(3));
         driveTrain = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
 
+        yAxisSamples = new double[NUM_SAMPLES];
+        sampleIndex = 0;
         setDefaultCommand(drive());
     }
 
     public CommandBase drive() {
+
         return new RunCommand(() -> {
             int thisIsAnInt;
             double thisIsADouble = 0.4123;
@@ -48,10 +58,22 @@ public class Drive extends SubsystemBase {
             // The left trigger is subtracted from the right to allow us to move backwards
             double yAxis = Robot.driveController.getTriggerAxis(Hand.kRight)
                     - Robot.driveController.getTriggerAxis(Hand.kLeft);
+            if (i == 10) {
+                i = 0;
+            }
+            speedInput[i] = yAxis;
+
+            double sum = 0;
+            for (double j : speedInput) {
+                sum += j;
+            }
+            double avg = sum / NUM_SAMPLES;
+
             if (0.2 > yAxis && yAxis > -0.2) {
                 yAxis = 0;
             }
-            driveTrain.arcadeDrive(yAxis, Robot.driveController.getX(Hand.kLeft));
+            i++;
+            driveTrain.arcadeDrive(avg, Robot.driveController.getX(Hand.kLeft));
         }, this);
     }
 }
