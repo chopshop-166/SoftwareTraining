@@ -29,28 +29,29 @@ public class Drive extends SubsystemBase {
     double speedInput[] = new double[NUM_SAMPLES];
     int i = 0;
 
-    final int NUM_SAMPLES = 5;
-    double yAxisSamples[];
-    int sampleIndex;
-
     public Drive() {
         super();
         rightMotorGroup = new SpeedControllerGroup(new WPI_TalonSRX(4), new WPI_TalonSRX(1));
         leftMotorGroup = new SpeedControllerGroup(new WPI_TalonSRX(2), new WPI_TalonSRX(3));
         driveTrain = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
 
-        yAxisSamples = new double[NUM_SAMPLES];
-        sampleIndex = 0;
         setDefaultCommand(drive());
+    }
+
+    int square(int x, int y, double z) {
+        return x * x;
+    }
+
+    double deadband(double input) {
+        if (0.2 > input && input > -0.2) {
+            input = 0;
+        }
+        return input;
     }
 
     public CommandBase drive() {
 
         return new RunCommand(() -> {
-            int thisIsAnInt;
-            double thisIsADouble = 0.4123;
-            boolean thisIsABool = true;
-            String thisIsAString = "HELLO WORLD";
 
             // This code gets the value from the two triggers and a joystick
             // The right trigger controls forward speed, the left trigger controls backward
@@ -69,11 +70,10 @@ public class Drive extends SubsystemBase {
             }
             double avg = sum / NUM_SAMPLES;
 
-            if (0.2 > yAxis && yAxis > -0.2) {
-                yAxis = 0;
-            }
+            avg = deadband(avg);
+            double x = deadband(Robot.driveController.getX(Hand.kLeft));
             i++;
-            driveTrain.arcadeDrive(avg, Robot.driveController.getX(Hand.kLeft));
+            driveTrain.arcadeDrive(avg, x);
         }, this);
     }
 }
