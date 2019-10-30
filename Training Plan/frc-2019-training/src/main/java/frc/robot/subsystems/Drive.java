@@ -39,7 +39,7 @@ public class Drive extends SubsystemBase {
     }
 
     int square(int x, int y, double z) {
-        return x * x;
+        return Math.pow(x, 6);
     }
 
     double deadband(double input) {
@@ -47,6 +47,14 @@ public class Drive extends SubsystemBase {
             input = 0;
         }
         return input;
+    }
+
+    double calcAvg(double input[]) {
+        double sum = 0;
+        for (double j : input) {
+            sum += j;
+        }
+        return sum / input.length;
     }
 
     public CommandBase drive() {
@@ -59,7 +67,7 @@ public class Drive extends SubsystemBase {
             // The left trigger is subtracted from the right to allow us to move backwards
             double yAxis = Robot.driveController.getTriggerAxis(Hand.kRight)
                     - Robot.driveController.getTriggerAxis(Hand.kLeft);
-            if (i == 10) {
+            if (i == NUM_SAMPLES) {
                 i = 0;
             }
             speedInput[i] = yAxis;
