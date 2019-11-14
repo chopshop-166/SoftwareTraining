@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.SpeedController;
+
 /**
  * The RobotMap is an interface that contains the instructions on how to make a
  * particular robot. This is useful for situations of practice robot vs real
@@ -14,4 +16,10 @@ package frc.robot;
  */
 public interface RobotMap {
 
+    public interface DriveMap {
+        public SpeedController left();
+        public SpeedController right();
+    }
+
+    public DriveMap getDriveMap();
 }
