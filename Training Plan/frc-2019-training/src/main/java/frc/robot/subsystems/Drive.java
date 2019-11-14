@@ -7,39 +7,34 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
-
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import frc.robot.RobotMap;
 
 /**
  * An example subsystem. You can replace me with your own Subsystem.
  */
 public class Drive extends SubsystemBase {
 
-    private final SpeedControllerGroup rightMotorGroup;
-    private final SpeedControllerGroup leftMotorGroup;
+    private final SpeedController rightMotorGroup;
+    private final SpeedController leftMotorGroup;
     private final DifferentialDrive driveTrain;
     final static int NUM_SAMPLES = 10;
     double speedInput[] = new double[NUM_SAMPLES];
     int i = 0;
 
-    public Drive() {
+    public Drive(RobotMap.DriveMap map) {
         super();
-        rightMotorGroup = new SpeedControllerGroup(new WPI_TalonSRX(4), new WPI_TalonSRX(1));
-        leftMotorGroup = new SpeedControllerGroup(new WPI_TalonSRX(2), new WPI_TalonSRX(3));
+        rightMotorGroup = map.right();
+        leftMotorGroup = map.left();
         driveTrain = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
 
         setDefaultCommand(drive());
-    }
-
-    int square(int x, int y, double z) {
-        return Math.pow(x, 6);
     }
 
     double deadband(double input) {

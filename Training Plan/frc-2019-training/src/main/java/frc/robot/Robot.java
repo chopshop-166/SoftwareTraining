@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.maps.PracticeBot;
 import frc.robot.subsystems.Drive;
 
 /**
@@ -24,7 +25,8 @@ import frc.robot.subsystems.Drive;
  */
 public class Robot extends TimedRobot {
     // public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-    final private static Drive drive = new Drive();
+    final private RobotMap map = new PracticeBot();
+    final private Drive drive = new Drive(map.getDriveMap());
 
     final public static ButtonXboxController driveController = new ButtonXboxController(0);
 
