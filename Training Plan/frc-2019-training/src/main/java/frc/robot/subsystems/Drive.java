@@ -34,7 +34,7 @@ public class Drive extends SubsystemBase {
         leftMotorGroup = map.left();
         driveTrain = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
 
-        setDefaultCommand(drive());
+        setDefaultCommand(demoDrive());
     }
 
     double deadband(double input) {
@@ -52,8 +52,22 @@ public class Drive extends SubsystemBase {
         return sum / input.length;
     }
 
-    public CommandBase drive() {
+    // demoDrive() 
+    // Should take the same input from the driver
+    // Scale the input by 1/2 
 
+    public CommandBase demoDrive() {
+        return new RunCommand(() -> {
+            double yAxis = Robot.driveController.getTriggerAxis(Hand.kRight)
+                    - Robot.driveController.getTriggerAxis(Hand.kLeft);
+            double xAxis = Robot.driveController.getX(Hand.kLeft);
+            yAxis /= 2;
+            xAxis /= 2;
+            driveTrain.arcadeDrive(yAxis, xAxis);
+        }, this);
+    }
+
+    public CommandBase drive() {
         return new RunCommand(() -> {
 
             // This code gets the value from the two triggers and a joystick
@@ -65,6 +79,12 @@ public class Drive extends SubsystemBase {
             if (i == NUM_SAMPLES) {
                 i = 0;
             }
+
+            // initialize()
+            // execute()
+            // isFinished()
+            // end()
+
             speedInput[i] = yAxis;
 
             double sum = 0;

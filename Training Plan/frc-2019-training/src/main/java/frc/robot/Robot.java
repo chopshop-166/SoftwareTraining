@@ -8,11 +8,13 @@
 package frc.robot;
 
 import com.chopshop166.chopshoplib.controls.ButtonXboxController;
+import com.chopshop166.chopshoplib.controls.ButtonXboxController.XBoxButton;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.maps.PracticeBot;
 import frc.robot.subsystems.Drive;
 
@@ -29,7 +31,7 @@ public class Robot extends TimedRobot {
     final private Drive drive = new Drive(map.getDriveMap());
 
     final public static ButtonXboxController driveController = new ButtonXboxController(0);
-
+    
     Command m_autonomousCommand;
     SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -39,6 +41,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
+        oiMapping();
     }
 
     /**
@@ -120,5 +123,11 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void testPeriodic() {
+    }
+
+    // Setup Operator Interface mappings
+    private void oiMapping() {
+        JoystickButton xButton = new JoystickButton(driveController, XBoxButton.BACK.get());
+        xButton.whileHeld(drive.demoDrive());
     }
 }
