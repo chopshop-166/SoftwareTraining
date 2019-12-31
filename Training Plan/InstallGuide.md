@@ -7,7 +7,7 @@ Computer Setup
 - Download and install [git](https://git-scm.com)
 - Download and install [GitKraken](https://www.gitkraken.com)
 - Download and install [WPIlib and VS Code](https://github.com/wpilibsuite/allwpilib/releases)
-- Download and install [FRC Update Suite](http://www.ni.com/download/first-robotics-software-2015/5112/en/)
+- Download and install [FRC Update Suite](http://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#333285)
 
 Starting a New Repository
 -------------------------
