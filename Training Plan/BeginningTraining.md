@@ -90,25 +90,27 @@
     - Constructor, has the same name as the class
     - Member variables go at the top of the class
     - Methods go at the end, after member variables
-  - Example 'Pet'
-    - Has a:
-      - Name
-      - Age
-      - Color
-      - Hunger
-    - Can:
-      - Talk
-      - Feed
-      - Get Description
+    - Motor Class
+      - What do we control about motors?
+      - Values [-1,1]
+      - Getters / Setters
+      - Stop convenience feature
  - [ ] Inheritance
   - Classes `extend` other classes
   - Used to consolidate shared information/functionality
   - Extensions can add new functionality
   - Replace existing functionality
-  - Example 'Dog' extends 'Pet'
-    - `talk` overloaded to "bark"
-  - Example 'Cat' extends 'Pet'
-    - `talk` overloaded to "meow"
+  - MotorGroup class
+      - Has 2+ motors
+      - Implement same functions as Motor
+      - Add `getAverageSpeed()`
+      - Arrays!
+      - Variadic arguments
+      - For loops!
+  - `Drivetrain` class
+      - Left and Right `Motor`
+      - Following WPILib model
+      - Show usage with different combinations of `Motor` and `MotorGroup`
 
 ## Sixth Meeting
  - Explore classes used so far
