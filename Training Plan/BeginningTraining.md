@@ -1,6 +1,6 @@
 # Basic training Schedule
 
-## First Meeting:
+## First Week:
  - [ ] Install software
   - [WPI VS Code](https://github.com/wpilibsuite/allwpilib/releases)
   - FRC Update (Driver Station)
@@ -12,11 +12,16 @@
   - Talk through what is required as input to drive a robot
   - Let students drive the robot
 
-## Second Meeting:
+### Projects
+- Hello World!
+   - Explore printing other things
+
+## Second Week:
  - [ ] Comments
   - Explain comments
   - Add single line comment inside drive command
   - Add multi-line function comment for drive command
+ - Basic input (Project)
  - [ ] Variables
   - `int`
     - Whole numbers, integars are passed to create motor controllers
@@ -34,17 +39,14 @@
   - `if`
     - Implement deadband in drive command
     - Reduce turning speed at higher forward speed
-
-## Third Meeting:
- - [ ] Create console programs / Review
-  - Hello world!
-    - Explore printing other things
-  - Basic input
-    - Ask for users name, greet them
-    - Ask users age, print "You can drive" / "You can't drive" as appropriate
-      - Accept floating point age, print "You can drive with supervision" if they're older than 15.5
-    - Write program that prints the square of a number
-  - Write a 4 function calculator (Advanced)
+  ### Projects
+   - Basic input
+     - Ask for users name, greet them
+     - Ask users age, print "You can drive" / "You can't drive" as appropriate
+       - Accept floating point age, print "You can drive with supervision" if they're older than 15.5
+     - Write program that prints the square of a number
+## Third Week:
+ - Write a functional calculator (Project)
  - [ ] Arrays
   - Review syntax
  - [ ] Loops
@@ -58,8 +60,11 @@
   - Add averaging to driver input
   - This is a Low Pass Filter
   - Explore how increasing the window size (# of samples) slows response
-
-## Fourth Meeting:
+ ### Projects
+- [ ] Create console programs / Review
+  - Write a 2 function calculator
+  - Write a 4 function calculator (Advanced)
+## Fourth Week:
  - [ ] Functions
   - Way of encapsulating code that is re-used
     - 3 Components
@@ -79,7 +84,7 @@
  - [ ] Cover git if there's time remaining
 
 
-## Fifth Meeting
+## Fifth Week:
  - [ ] Classes
   - Hold information (Member variables) and functionality (methods) that are related
   - We've already seen classes
@@ -112,7 +117,7 @@
       - Following WPILib model
       - Show usage with different combinations of `Motor` and `MotorGroup`
 
-## Sixth Meeting
+## Sixth Week:
  - Explore classes used so far
   - Subsystem
   - Drive
@@ -125,8 +130,13 @@
     - Fill in behavior in custom robot map
     - Get value from robot map in Drive Subsystem
 
+## Seventh Week:
+## Eighth Week:
+## Ninth Week:
+## Tenth Week:
+
 ## Filler Material
-For when the going gets tough and there isn't enough material to fill the time
+For when the going gets tough and there isn't enough material to fill the tim
  - [ ] Cover GIT
   - If there's extra time, now is a good opportunity to cover GIT
   - [Software Roll Call](https://github.com/chopshop-166/SoftwareRollCall)
